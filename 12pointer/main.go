@@ -2,6 +2,10 @@ package main
 
 import "fmt"
 
+func updateValue(num *int) {
+	*num = *num + 20
+}
+
 func main() {
 	// Declare a normal variable
 	number := 42
@@ -17,4 +21,7 @@ func main() {
 	// Modify the value using the pointer
 	*ptr = 50
 	fmt.Println("Updated Value:", number) // 50
+
+	updateValue(&number)
+	fmt.Println("Updating value by reference:", number)
 }
