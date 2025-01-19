@@ -22,4 +22,34 @@ func main() {
 	// Get the current time (Hour, Minute, Second)
 	hour, minute, second := currentTime.Clock()
 	fmt.Printf("Current time is: %02d:%02d:%02d\n", hour, minute, second)
+
+	// Add 1 day to the current time
+	tomorrow := currentTime.Add(24 * time.Hour)
+	fmt.Println("Tomorrow's date and time: ", tomorrow)
+
+	// Subtract 1 day from the current time
+	yesterday := currentTime.Add(-24 * time.Hour)
+	fmt.Println("Yesterday's date and time: ", yesterday)
+
+	// Parse a time string into a Time object
+	timeString := "2025-01-15 10:30:00"
+	parsedTime, err := time.Parse("2006-01-02 15:04:05", timeString)
+	if err != nil {
+		fmt.Println("Error parsing time:", err)
+	} else {
+		fmt.Println("Parsed time is: ", parsedTime)
+	}
+
+	// Sleep for 2 seconds
+	fmt.Println("Sleeping for 2 seconds...")
+	time.Sleep(2 * time.Second)
+	fmt.Println("Awake after sleeping for 2 seconds!")
+
+	// Get the Unix timestamp
+	unixTimestamp := currentTime.Unix()
+	fmt.Printf("Unix timestamp: %d\n", unixTimestamp)
+
+	// Convert Unix timestamp back to Time
+	timeFromUnix := time.Unix(unixTimestamp, 0)
+	fmt.Println("Time from Unix timestamp: ", timeFromUnix)
 }
