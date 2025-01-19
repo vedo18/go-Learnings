@@ -23,4 +23,14 @@ func main() {
 	result := strings.Join(parts, "-")
 	fmt.Println("Joined Result:", result)
 
+	//Converts a string to uppercase or lowercase.
+
+	text1 := "Hello World"
+	fmt.Println(strings.ToUpper(text1)) // "HELLO WORLD"
+	fmt.Println(strings.ToLower(text1))
+
+	//Removes leading and trailing characters (default is whitespace).
+	text3 := "   hello world   "
+	fmt.Println(strings.Trim(text3, " "))
+
 }
