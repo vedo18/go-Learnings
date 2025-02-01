@@ -22,4 +22,9 @@ func main() {
 	fmt.Println("Path:", parsedURL.Path)         // /path/to/resource
 	fmt.Println("Fragment:", parsedURL.Fragment) // section1
 
+	// Step 3: Access query parameters
+	queryParams := parsedURL.Query()
+	fmt.Println("Query Parameters:")
+	fmt.Println("Name:", queryParams.Get("name")) // John Doe
+	fmt.Println("Age:", queryParams.Get("age"))   // 30
 }
