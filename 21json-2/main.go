@@ -1,8 +1,8 @@
 package main
 
 import (
-    "encoding/json"
-    "fmt"
+	"encoding/json"
+	"fmt"
 )
 
 // Define a struct that matches the structure of the JSON we want to parse
