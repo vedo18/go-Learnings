@@ -8,17 +8,20 @@ import (
 
 type Post struct {
 	UserId int    `json:"userId"`
-	ID     int    `json:"id"`
+	Id     int    `json:"id"`
 	Title  string `json:"title"`
 	Body   string `json:"body"`
 }
 
 func main() {
-	fmt.Println("GET method in GoLang!")
+	fmt.Println("Get method in go lang!")
 
-	response, err := http.Get("https://jsonplaceholder.typicode.com/posts/1")
+	url := "https://jsonplaceholder.typicode.com/posts/1"
+
+	response, err := http.Get(url)
+
 	if err != nil {
-		fmt.Println("Error fetching the data", err)
+		fmt.Println("Error while fetching", err)
 		return
 	}
 
@@ -30,11 +33,9 @@ func main() {
 
 	decoder.Decode(&post)
 
-	// Print the post details,
-	fmt.Println("Post details:")
-	fmt.Println("ID:", post.ID)
+	fmt.Println("User id:", post.UserId)
+	fmt.Println("Id:", post.Id)
 	fmt.Println("Title:", post.Title)
 	fmt.Println("Body:", post.Body)
-	fmt.Println("UserID:", post.UserId)
 
 }
